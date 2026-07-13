@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+    <link rel="stylesheet" href="style/ShopEase.css">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">ShopEase</div>
+        <div class="search-box">
+            <input id="search-input" type="text" placeholder="Search products">
+            <button id="search-btn">Search</button>
+        </div>
+        <div class="nav-actions">
+            <a class="fav-link" href="fav-product.html" aria-label="Favorites">
+                <img class="fav-icon" src="images/unfilled-heart.png" alt="Favorites">
+                <div class="fav-text">Favorite</div>
+            </a>
+            <a class="cart" href="checkout.html">
+                <div class="cart-quantity JS-cart-quantity">0</div>
+                <img src="images/cart-icon.png" class="cart-image">
+                <div class="cart-text">Cart</div>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h3>Filters</h3>
+
+            <div class="filter-section">
+                <h4>Price Range In Cents</h4>
+                <div class="price-range">
+                    <input id="price-min" type="number" placeholder="Min $" min="0" />
+                    <input id="price-max" type="number" placeholder="Max $" min="0" />
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="filter-section">
+                <h4>Category</h4>
+                <label><input type="checkbox" data-category="clothing" checked> Clothing</label>
+                <label><input type="checkbox" data-category="electronics" checked> Electronics</label>
+                <label><input type="checkbox" data-category="sports" checked> Sports</label>
+                <label><input type="checkbox" data-category="footwear" checked> Footwear</label>
+                <label><input type="checkbox" data-category="accessories" checked> Accessories</label>
+            </div>
+
+            <hr class="divider">
+
+            <div class="filter-section">
+                <h4>Rating</h4>
+                <label><input type="radio" name="rating" value="5"> <img class="product-rating-star"
+                        src="images/ratings/rating-5.png">5</label>
+                <label><input type="radio" name="rating" value="4" checked><img class="product-rating-star"
+                        src="images/ratings/rating-4.png">4+</label>
+                <label><input type="radio" name="rating" value="3.5"><img class="product-rating-star"
+                        src="images/ratings/rating-3.5.png">3.5+</label>
+            </div>
+
+            <hr class="divider">
+
+            <div class="filter-section">
+                <h4>Color</h4>
+                <div class="color-dots">
+                    <div class="color-dot" data-color="black" style="background:#1a1a2e;"></div>
+                    <div class="color-dot" data-color="orange" style="background:#e07b54;"></div>
+                    <div class="color-dot" data-color="blue" style="background:#5c8fc4;"></div>
+                    <div class="color-dot" data-color="green" style="background:#6abf8f;"></div>
+                    <div class="color-dot" data-color="yellow" style="background:#e8d04b;"></div>
+                    <div class="color-dot" data-color="gray" style="background:#ccc;"></div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="filter-section">
+                <h4>Availability</h4>
+                <label><input type="checkbox" data-availability="in-stock" checked> In Stock</label>
+                <label><input type="checkbox" data-availability="on-sale"> On Sale</label>
+            </div>
+
+            <button class="apply-btn" id="apply-filters">Apply Filters</button>
+        </aside>
+
+        <div class="products JS-products"></div>
+    </div>
+    <script type="module" src="scripts/data/ShopEase.js"></script>
+</body>
+
+</html>

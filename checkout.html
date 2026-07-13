@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="style/checkout.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="heading">
+            <a href="index.html"><h1>ShopEase</h1></a>
+            <h1>Checkout (<span class="JS-checkout-count">0</span> items)</h1>
+            <img src="images/lock-checkout.png" alt="lock">
+        </div>
+
+        <div class="order-summary">Review Your Order Summary</div>
+        <div class="main">
+            <div class="left">
+                <div>
+                    <div class="items JS-order-summary"></div>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="box summary">
+                    <h3>Order Summary</h3>
+                    <p><span>Items</span><span class="JS-items-price">$0.00</span></p>
+                    <p><span>Shipping</span><span class="JS-shipping">$0.00</span></p>
+                    <hr>
+                    <p><span>Total before tax</span><span class="JS-total-before-tax">$0.00</span></p>
+                    <p><span>Estimated tax (10%)</span><span class="JS-estimated-tax">$0.00</span></p>
+                    <hr>
+                    <p class="order-total">
+                        <span>Order Total</span>
+                        <span class="JS-order-total">$0.00</span>
+                    </p>
+                    <button class="JS-place-order">Place Your Order</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script type="module" src="scripts/data/checkout.js"></script>
+</body>
+
+</html>
