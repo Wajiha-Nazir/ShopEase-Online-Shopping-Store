@@ -9,28 +9,44 @@
 </head>
 
 <body>
-
     <div class="navbar">
-        <div class="logo">ShopEase</div>
-        <div class="search-box">
-            <input id="search-input" type="text" placeholder="Search products">
-            <button id="search-btn">Search</button>
+
+        <!-- Normal Header -->
+        <div class="nav-main">
+
+            <div class="logo">ShopEase</div>
+
+            <div class="nav-actions">
+
+                <button id="mobile-search-btn" class="mobile-search-btn">
+                    🔍
+                </button>
+
+                <a class="fav-link" href="fav-product.html" aria-label="Favorites">
+                    <img class="fav-icon" src="images/unfilled-heart.png" alt="Favorites">
+                    <div class="fav-text">Favorite</div>
+                </a>
+
+                <a class="cart" href="checkout.html" aria-label="Cart">
+                    <div class="cart-quantity JS-cart-quantity">0</div>
+                    <img src="images/cart-icon.png" class="cart-image" alt="Cart">
+                    <div class="cart-text">Cart</div>
+                </a>
+
+            </div>
+
         </div>
 
-        <button id="mobile-search-toggle">
-            🔍
-        </button>
-        <div class="nav-actions">
-            <a class="fav-link" href="fav-product.html" aria-label="Favorites">
-                <img class="fav-icon" src="images/unfilled-heart.png" alt="Favorites">
-                <div class="fav-text">Favorite</div>
-            </a>
-            <a class="cart" href="checkout.html">
-                <div class="cart-quantity JS-cart-quantity">0</div>
-                <img src="images/cart-icon.png" class="cart-image">
-                <div class="cart-text">Cart</div>
-            </a>
+        <!-- Search Header -->
+        <div class="mobile-search">
+
+            <div class="search-box">
+                <input id="search-input" type="text" placeholder="Search products">
+                <button id="search-btn">Search</button>
+            </div>
+
         </div>
+
     </div>
 
     <div class="container">
