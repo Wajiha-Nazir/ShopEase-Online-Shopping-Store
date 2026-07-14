@@ -199,5 +199,12 @@ colorDots.forEach((dot) => {
 window.addEventListener('favoritesUpdated', () => {
     syncFavoriteUi();
 });
+const filterToggle = document.getElementById('filter-toggle');
+const sidebar = document.querySelector('.sidebar');
 
+if (filterToggle && sidebar) {
+    filterToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('show');
+    });
+}
 renderProducts(products);
