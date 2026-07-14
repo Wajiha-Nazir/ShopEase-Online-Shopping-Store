@@ -5,37 +5,63 @@ import { createProductCard } from './components.js';
 import { parseRatingValue, isOnSale, isInStock } from './product-utils.js';
 
 function searchProducts() {
-    const searchInput = document.querySelector('.search-box input');
-    if (!searchInput) return;
 
-    const searchText = searchInput.value.trim().toLowerCase();
+    const desktopInput = document.querySelector('#search-input');
+    const mobileInput = document.querySelector('#search-input-mobile');
+
+    let searchText = '';
+
+    if (
+        mobileInput &&
+        getComputedStyle(mobileInput).display !== 'none' &&
+        mobileInput.value.trim() !== ''
+    ) {
+        searchText = mobileInput.value.trim().toLowerCase();
+    } else if (desktopInput) {
+        searchText = desktopInput.value.trim().toLowerCase();
+    }
 
     if (searchText === '') {
         renderProducts(products);
         return;
     }
 
-    const searchedProducts = products.filter((product) =>
+    const searchedProducts = products.filter(product =>
         product.name.toLowerCase().includes(searchText)
     );
 
     renderProducts(searchedProducts);
 }//done
 
-const searchInput = document.querySelector('.search-box input');//done
-const searchButton = document.querySelector('.search-box button');//done
+const desktopSearchInput = document.getElementById('search-input');
+const desktopSearchButton = document.getElementById('search-btn');
 
-if (searchButton) {
-    searchButton.addEventListener('click', searchProducts);
-}//done
+const mobileSearchInput = document.getElementById('search-input-mobile');
+const mobileSearchButton = document.getElementById('search-btn-mobile');
 
-if (searchInput) {
-    searchInput.addEventListener('keydown', (event) => {
+if (desktopSearchButton) {
+    desktopSearchButton.addEventListener('click', searchProducts);
+}
+
+if (mobileSearchButton) {
+    mobileSearchButton.addEventListener('click', searchProducts);
+}
+
+if (desktopSearchInput) {
+    desktopSearchInput.addEventListener('keydown', (event) => {
         if (event.key === 'Enter') {
             searchProducts();
         }
     });
-}//done
+}
+
+if (mobileSearchInput) {
+    mobileSearchInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+            searchProducts();
+        }
+    });
+}
 
 function updateFavoriteButtons() {
     document.querySelectorAll('.product-fav-button').forEach((button) => {
@@ -207,13 +233,22 @@ if (filterToggle && sidebar) {
         sidebar.classList.toggle('show');
     });
 }
-const mobileSearchButton =
-    document.getElementById('mobile-search-toggle');
-
 const navbar = document.querySelector('.navbar');
 const mobileSearchBtn = document.getElementById('mobile-search-btn');
 
-mobileSearchBtn.addEventListener('click', () => {
-    navbar.classList.add('search-active');
-});
+if (mobileSearchBtn) {
+
+    mobileSearchBtn.addEventListener('click', () => {
+
+        navbar.classList.add('search-active');
+
+        const mobileInput = document.getElementById('search-input-mobile');
+
+        if (mobileInput) {
+            mobileInput.focus();
+        }
+
+    });
+
+}
 renderProducts(products);
