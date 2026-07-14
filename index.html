@@ -11,43 +11,69 @@
 <body>
     <div class="navbar">
 
-        <!-- Normal Header -->
-        <div class="nav-main">
+    <div class="nav-main">
 
-            <div class="logo">ShopEase</div>
+        <div class="logo">ShopEase</div>
 
-            <div class="nav-actions">
-
-                <button id="mobile-search-btn" class="mobile-search-btn">
-                    🔍
-                </button>
-
-                <a class="fav-link" href="fav-product.html" aria-label="Favorites">
-                    <img class="fav-icon" src="images/unfilled-heart.png" alt="Favorites">
-                    <div class="fav-text">Favorite</div>
-                </a>
-
-                <a class="cart" href="checkout.html" aria-label="Cart">
-                    <div class="cart-quantity JS-cart-quantity">0</div>
-                    <img src="images/cart-icon.png" class="cart-image" alt="Cart">
-                    <div class="cart-text">Cart</div>
-                </a>
-
-            </div>
-
-        </div>
-
-        <!-- Search Header -->
-        <div class="mobile-search">
-
+        <!-- Desktop Search -->
+        <div class="desktop-search">
             <div class="search-box">
                 <input id="search-input" type="text" placeholder="Search products">
                 <button id="search-btn">Search</button>
             </div>
+        </div>
+
+
+        <div class="nav-actions">
+
+            <!-- Mobile Only Search Icon -->
+            <button id="mobile-search-btn" class="mobile-search-btn">
+                🔍
+            </button>
+
+
+            <a class="fav-link" href="fav-product.html">
+                <img class="fav-icon" src="images/unfilled-heart.png">
+                <div class="fav-text">Favorite</div>
+            </a>
+
+
+            <a class="cart" href="checkout.html">
+
+                <div class="cart-quantity JS-cart-quantity">
+                    0
+                </div>
+
+                <img src="images/cart-icon.png" class="cart-image">
+
+                <div class="cart-text">
+                    Cart
+                </div>
+
+            </a>
 
         </div>
 
     </div>
+
+
+    <!-- Mobile Search -->
+    <div class="mobile-search">
+
+        <div class="search-box">
+
+            <input id="search-input-mobile" type="text" placeholder="Search products">
+
+            <button id="search-btn-mobile">
+                Search
+            </button>
+
+        </div>
+
+    </div>
+
+
+</div>
 
     <div class="container">
         <button class="filter-toggle" id="filter-toggle">☰ Filter</button>
